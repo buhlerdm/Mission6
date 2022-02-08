@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Logging;
 using Mission6.Models;
 using System;
@@ -49,18 +50,16 @@ namespace Mission6.Controllers
             }
         }
 
-
+        [HttpGet]
         public IActionResult TaskQuadrant()
         {
+            var Tasks = InfoContext.responses
+                .Include(x => x.Category)
+                .Where(x => x.TaskName != null)
+                .ToList();
 
-            return View();
+            return View(Tasks);
         }
-
-
-
-
-
-
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()
