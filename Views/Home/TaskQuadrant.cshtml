@@ -31,21 +31,34 @@
         <div style="border: 1px solid black;" class="col-lg-5">
             <h5 class="text-center">Quadrant 1</h5>
             <div class="container">
-                <div class="row">
-                    <div class="col-6">Task</div>
-                    <div class="col-3">Edit/Delete</div>
-                    <div class="col-3">Complete</div>
-                </div>
+                @foreach (var x in Model)
+                {
+                    @if (x.Quadrant == "1" && x.Completed == false)
+                    {
+                        <div class="row">
+                            <div class="col-6">@x.TaskName</div>
+                            <div class="col-3">Edit/Delete</div>
+                            <div class="col-3">Complete</div>
+                        </div>
+                    }
+                }
             </div>
         </div>
+
         <div style="border: 1px solid black;" class="col-lg-5">
             <h5 class="text-center">Quadrant 2</h5>
             <div class="container">
-                <div class="row">
-                    <div class="col-6">Task</div>
-                    <div class="col-3">Edit/Delete</div>
-                    <div class="col-3">Complete</div>
-                </div>
+                @foreach (var x in Model)
+                {
+                    @if (x.Quadrant == "2" && x.Completed == false)
+                    {
+                        <div class="row">
+                            <div class="col-6">@x.TaskName</div>
+                            <div class="col-3">Edit/Delete</div>
+                            <div class="col-3">Complete</div>
+                        </div>
+                    }
+                }
             </div>
         </div>
     </div>
@@ -57,22 +70,36 @@
         <div style="border: 1px solid black;" class="col-lg-5">
             <h5 class="text-center">Quadrant 3</h5>
             <div class="container">
-                <div class="row">
-                    <div class="col-6">Task</div>
-                    <div class="col-3">Edit/Delete</div>
-                    <div class="col-3">Complete</div>
-                </div>
+                @foreach (var x in Model)
+                {
+                    @if (x.Quadrant == "3" && x.Completed == false)
+                    {
+                        <div class="row">
+                            <div class="col-6">@x.TaskName</div>
+                            <div class="col-3">Edit/Delete</div>
+                            <div class="col-3">Complete</div>
+                        </div>
+                    }
+                }
             </div>
         </div>
         <div style="border: 1px solid black;" class="col-lg-5">
             <h5 class="text-center">Quadrant 4</h5>
             <div class="container">
-                <div class="row">
-                    <div class="col-6">Task</div>
-                    <div class="col-3">Edit/Delete</div>
-                    <div class="col-3">Complete</div>
-                </div>
+                @foreach (var x in Model)
+                {
+                    @if (x.Quadrant == "4" && x.Completed == false)
+                    {
+                        <div class="row">
+                            <div class="col-6">@x.TaskName</div>
+                            <div class="col-3">Edit/Delete</div>
+                            <div class="col-3">Complete</div>
+                        </div>
+                    }
+                }
             </div>
         </div>
     </div>
 </div>
+<br/>
+<a asp-controller="Home" asp-action="TaskForm" class="btn btn-primary">Add New Task</a>
