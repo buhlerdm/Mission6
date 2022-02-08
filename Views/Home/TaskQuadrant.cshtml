@@ -5,4 +5,74 @@
     ViewData["Title"] = "Task Quadrant";
 }
 
-<h1>Task Quadrant</h1>
+@model List<TaskResponse>
+
+<h1 class="text-center">Task Quadrant</h1>
+<div style="border: 1px solid black;" class="container">
+    <div style="border: 1px solid black;" class="row">
+        <div style="border: 1px solid black;" class="col bigger text-center">Stephen Covey's Time Management Matrix</div>
+    </div>
+
+    <div style="border: 1px solid black;" class="row">
+        <div style="border: 1px solid black;" class="col-sm-2"></div>
+        <div style="border: 1px solid black;" class="col-lg-5 bigger text-center">
+            Urgent
+        </div>
+        <div style="border: 1px solid black;" class="col-lg-5 bigger text-center">
+            Not Urgent
+        </div>
+    </div>
+
+    <div style="border: 1px solid black;" class="row">
+        <div style="border: 1px solid black;" class="col-sm-2">
+            <div class="text-orientation text-center">&nbsp;IMPORTANT&nbsp;</div>
+        </div>
+
+        <div style="border: 1px solid black;" class="col-lg-5">
+            <h5 class="text-center">Quadrant 1</h5>
+            <div class="container">
+                <div class="row">
+                    <div class="col-6">Task</div>
+                    <div class="col-3">Edit/Delete</div>
+                    <div class="col-3">Complete</div>
+                </div>
+            </div>
+        </div>
+        <div style="border: 1px solid black;" class="col-lg-5">
+            <h5 class="text-center">Quadrant 2</h5>
+            <div class="container">
+                <div class="row">
+                    <div class="col-6">Task</div>
+                    <div class="col-3">Edit/Delete</div>
+                    <div class="col-3">Complete</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div style="border: 1px solid black;" class="row">
+        <div style="border: 1px solid black;" class="col-sm-2">
+            <div class="text-orientation text-center">&nbsp;NOT IMPORTANT&nbsp;</div>
+        </div>
+        <div style="border: 1px solid black;" class="col-lg-5">
+            <h5 class="text-center">Quadrant 3</h5>
+            <div class="container">
+                <div class="row">
+                    <div class="col-6">Task</div>
+                    <div class="col-3">Edit/Delete</div>
+                    <div class="col-3">Complete</div>
+                </div>
+            </div>
+        </div>
+        <div style="border: 1px solid black;" class="col-lg-5">
+            <h5 class="text-center">Quadrant 4</h5>
+            <div class="container">
+                <div class="row">
+                    <div class="col-6">Task</div>
+                    <div class="col-3">Edit/Delete</div>
+                    <div class="col-3">Complete</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
