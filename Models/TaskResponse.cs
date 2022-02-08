@@ -11,11 +11,10 @@ namespace Mission6.Models
         [Key]
         [Required]
         public int TaskId { get; set; }
-
         [Required(ErrorMessage = "Please enter a valid task name.")]
         public string TaskName { get; set; }
         public string DueDate { get; set; }
-        [Required(ErrorMessage = "Please enter a valid Quadrant.")]
+        [Required(ErrorMessage = "Please select a valid quadrant.")]
         public string Quadrant { get; set; }
         public bool Completed { get; set; }
 
