@@ -66,5 +66,52 @@ namespace Mission6.Controllers
         {
             return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
         }
+
+        //Edit entries for tasks
+        [HttpGet]
+        public IActionResult Edit(int taskid)
+        {
+            ViewBag.Categories = InfoContext.Categories.ToList();
+
+            var submission = InfoContext.responses.Single(x => x.TaskId == taskid);
+
+            return View("TaskForm", submission);
+        }
+
+        [HttpPost]
+        public IActionResult Edit(TaskResponse editedTask)
+        {
+            if (ModelState.IsValid) //If valid
+            {
+                InfoContext.Update(editedTask);
+                InfoContext.SaveChanges();
+
+                return RedirectToAction("TaskQuadrant");
+            }
+
+            else //If Invalid
+            {
+                ViewBag.Categories = InfoContext.Categories.ToList();
+
+                return View("TaskForm", editedTask);
+            }
+        }
+
+        //Delete entries for a task
+        [HttpGet]
+        public IActionResult Delete(int taskid)
+        {
+            var submission = InfoContext.responses.Single(x => x.TaskId == taskid);
+
+            return View(submission);
+        }
+        [HttpPost]
+        public IActionResult Delete(TaskResponse deletedTask)
+        {
+            InfoContext.responses.Remove(deletedTask);
+            InfoContext.SaveChanges();
+
+            return RedirectToAction("TaskQuadrant");
+        }
     }
 }

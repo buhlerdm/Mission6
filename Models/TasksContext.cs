@@ -37,7 +37,7 @@ namespace Mission6.Models
                 {
                     TaskId = 1,
                     TaskName = "Vaccuum the living room",
-                    DueDate = "2/10/21",
+                    DueDate = "02/10/22",
                     Quadrant = "4",
                     CategoryId = 1,
                     Completed = false
@@ -48,7 +48,7 @@ namespace Mission6.Models
                 {
                     TaskId = 2,
                     TaskName = "Shop for Mom's birthday",
-                    DueDate = "2/9/21",
+                    DueDate = "02/09/22",
                     Quadrant = "2",
                     CategoryId = 1,
                     Completed = false
