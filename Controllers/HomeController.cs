@@ -113,5 +113,31 @@ namespace Mission6.Controllers
 
             return RedirectToAction("TaskQuadrant");
         }
+
+
+
+
+
+
+
+
+
+
+        //Complete entries for a task
+        [HttpGet]
+        public IActionResult Complete(int taskid)
+        {
+            var submission = InfoContext.responses.Single(x => x.TaskId == taskid);
+
+            return View(submission);
+        }
+        [HttpPost]
+        public IActionResult Complete(TaskResponse CompletedTask)
+        {
+            InfoContext.Update(CompletedTask);
+            InfoContext.SaveChanges();
+
+            return RedirectToAction("TaskQuadrant");
+        }
     }
 }
